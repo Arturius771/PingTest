@@ -75,7 +75,7 @@ namespace PingTest {
             saveFile.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
             saveFile.FilterIndex = 1;
             if (saveFile.ShowDialog() == DialogResult.OK) {
-                File.WriteAllText(saveFile.FileName, textBox1.Text + ":\r\n" + textBox5.Text + "\r\n" + textBox2.Text + ":\r\n" + textBox6.Text + "\r\n" + textBox3.Text + ":\r\n" + textBox7.Text + "\r\n" + textBox4.Text + ":\r\n" + textBox8.Text);
+                File.WriteAllText(saveFile.FileName, "Timeout: " + textBox9.Text + " Frequency: " + textBox10.Text + "\r\n" + textBox1.Text + ":\r\n" + textBox5.Text + "\r\n" + textBox2.Text + ":\r\n" + textBox6.Text + "\r\n" + textBox3.Text + ":\r\n" + textBox7.Text + "\r\n" + textBox4.Text + ":\r\n" + textBox8.Text);
             }
         }
         private void InitializeTimer() {

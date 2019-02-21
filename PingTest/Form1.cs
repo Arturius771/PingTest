@@ -15,6 +15,7 @@ namespace PingTest {
         IPAddress ip3;
         IPAddress ip4;
         int milliseconds;
+        int count = 1;
 
         public Form1() {
             Console.WriteLine("Hello");
@@ -26,8 +27,7 @@ namespace PingTest {
                 Console.WriteLine("Button1 Pressed");
                 button1Pressed = !button1Pressed;
                 milliseconds = int.Parse(textBox9.Text);
-                ip1 = IPAddress.Parse(textBox1.Text);
-                
+                ip1 = IPAddress.Parse(textBox1.Text);                
                 InitializeTimer();
             }
             catch {
@@ -90,17 +90,20 @@ namespace PingTest {
         private void Timer1_Tick(object Sender, EventArgs e) {
             Console.WriteLine("Tick");
             // Set the caption to the current time. 
-            if (button1Pressed == true) {
-                new PingIP(ip1, textBox5, textBox1, milliseconds);
+            if(button1Pressed == true) {
+                new PingIP(ip1, textBox5, textBox1, milliseconds, count);
             }
-            if (button2Pressed == true) {
-                new PingIP(ip2, textBox6, textBox2, milliseconds);
+            if(button2Pressed == true) {
+                new PingIP(ip2, textBox6, textBox2, milliseconds, count);
             }
-            if (button3Pressed == true) {
-                new PingIP(ip3, textBox7, textBox3, milliseconds);
+            if(button3Pressed == true) {
+                new PingIP(ip3, textBox7, textBox3, milliseconds, count);
             }
-            if (button4Pressed == true) {
-                new PingIP(ip4, textBox8, textBox4, milliseconds);
+            if(button4Pressed == true) {
+                new PingIP(ip4, textBox8, textBox4, milliseconds, count);
+            }
+            if(button1Pressed == true | button2Pressed == true | button3Pressed == true | button4Pressed == true) {
+                count++;
             }
         }
     }

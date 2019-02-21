@@ -167,8 +167,7 @@
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "Ping Test                                                                        " +
-    "                                                                                " +
-    "            Artúr Foden 2019";
+    "                                                    Artúr Foden 2019";
             this.ResumeLayout(false);
             this.PerformLayout();
 

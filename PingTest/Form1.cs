@@ -28,7 +28,8 @@ namespace PingTest {
                 Console.WriteLine("Button1 Pressed");
                 button1Pressed = !button1Pressed;
                 milliseconds = int.Parse(textBox9.Text);
-                ip1 = IPAddress.Parse(textBox1.Text); 
+                ip1 = IPAddress.Parse(textBox1.Text);
+                myTimer.Interval = int.Parse(textBox10.Text);
             }
             catch {
                 Console.WriteLine("error button1");
@@ -40,6 +41,7 @@ namespace PingTest {
                 button2Pressed = !button2Pressed;
                 milliseconds = int.Parse(textBox9.Text);
                 ip2 = IPAddress.Parse(textBox2.Text);
+                myTimer.Interval = int.Parse(textBox10.Text);
             }
             catch {
                 Console.WriteLine("error button2");
@@ -51,6 +53,7 @@ namespace PingTest {
                 button3Pressed = !button3Pressed;
                 milliseconds = int.Parse(textBox9.Text);
                 ip3 = IPAddress.Parse(textBox3.Text);
+                myTimer.Interval = int.Parse(textBox10.Text);
             }
             catch {
                 Console.WriteLine("error button3");
@@ -61,7 +64,8 @@ namespace PingTest {
                 Console.WriteLine("Button4 Pressed");
                 button4Pressed = !button4Pressed;
                 milliseconds = int.Parse(textBox9.Text);
-                ip4 = IPAddress.Parse(textBox4.Text);                
+                ip4 = IPAddress.Parse(textBox4.Text);
+                myTimer.Interval = int.Parse(textBox10.Text);
             }
             catch {
                 Console.WriteLine("error button4");

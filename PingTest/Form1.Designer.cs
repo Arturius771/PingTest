@@ -221,7 +221,6 @@
             this.label3.Size = new System.Drawing.Size(233, 14);
             this.label3.TabIndex = 16;
             this.label3.Text = "Artúr Foden Feb 2019 | www.arturfoden.ie";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label4
             // 
@@ -261,8 +260,7 @@
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(33, 14);
             this.label6.TabIndex = 20;
-            this.label6.Text = "v1.42";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
+            this.label6.Text = "v1.43";
             // 
             // Form1
             // 

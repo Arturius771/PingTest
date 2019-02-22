@@ -16,12 +16,15 @@ namespace PingTest {
         IPAddress ip4;
         int milliseconds;
         int count = 0;
+        string startTime;
+        string reportTime;
 
         public Form1() {
             Console.WriteLine("Hello");
             InitializeComponent();
             InitializeTimer();
             milliseconds = int.Parse(textBox9.Text);
+            startTime = DateTime.Now.ToShortTimeString();
         }
         private void button1_Click(object sender, EventArgs e) {
             try {
@@ -72,11 +75,12 @@ namespace PingTest {
             }
         }
         private void button5_Click(object sender, EventArgs e) {
+            reportTime = DateTime.Now.ToShortTimeString();
             SaveFileDialog saveFile = new SaveFileDialog();
             saveFile.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
             saveFile.FilterIndex = 1;
             if (saveFile.ShowDialog() == DialogResult.OK) {
-                File.WriteAllText(saveFile.FileName, "Timeout: " + textBox9.Text + " Frequency: " + textBox10.Text + "\r\n" + textBox1.Text + ":\r\n" + textBox5.Text + "\r\n" + textBox2.Text + ":\r\n" + textBox6.Text + "\r\n" + textBox3.Text + ":\r\n" + textBox7.Text + "\r\n" + textBox4.Text + ":\r\n" + textBox8.Text);
+                File.WriteAllText(saveFile.FileName, "Start: " + startTime + " " + "End: " + reportTime + "\r\nTimeout: " + textBox9.Text + " Frequency: " + textBox10.Text + "\r\n" + textBox1.Text + ":\r\n" + textBox5.Text + "\r\n" + textBox2.Text + ":\r\n" + textBox6.Text + "\r\n" + textBox3.Text + ":\r\n" + textBox7.Text + "\r\n" + textBox4.Text + ":\r\n" + textBox8.Text);
             }
         }
         private void InitializeTimer() {

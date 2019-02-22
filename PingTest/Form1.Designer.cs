@@ -257,11 +257,12 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(730, 22);
+            this.label6.Location = new System.Drawing.Point(724, 22);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(33, 14);
             this.label6.TabIndex = 20;
             this.label6.Text = "v1.41";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // Form1
             // 

@@ -104,5 +104,9 @@ namespace PingTest {
                 new PingIP(ip4, textBox8, textBox4, milliseconds, count);
             }
         }
+
+        private void label3_Click(object sender, EventArgs e) {
+
+        }
     }
 }

@@ -52,34 +52,34 @@
             this.textBox1.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.Location = new System.Drawing.Point(15, 80);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(180, 22);
+            this.textBox1.Size = new System.Drawing.Size(200, 22);
             this.textBox1.TabIndex = 0;
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox2
             // 
             this.textBox2.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(201, 80);
+            this.textBox2.Location = new System.Drawing.Point(221, 80);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(180, 22);
+            this.textBox2.Size = new System.Drawing.Size(200, 22);
             this.textBox2.TabIndex = 1;
             this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox3
             // 
             this.textBox3.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(387, 80);
+            this.textBox3.Location = new System.Drawing.Point(427, 80);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(180, 22);
+            this.textBox3.Size = new System.Drawing.Size(200, 22);
             this.textBox3.TabIndex = 2;
             this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox4
             // 
             this.textBox4.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(573, 80);
+            this.textBox4.Location = new System.Drawing.Point(633, 80);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(180, 22);
+            this.textBox4.Size = new System.Drawing.Size(200, 22);
             this.textBox4.TabIndex = 3;
             this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -91,40 +91,40 @@
             this.textBox5.Name = "textBox5";
             this.textBox5.ReadOnly = true;
             this.textBox5.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox5.Size = new System.Drawing.Size(180, 385);
+            this.textBox5.Size = new System.Drawing.Size(200, 385);
             this.textBox5.TabIndex = 4;
             // 
             // textBox6
             // 
             this.textBox6.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(201, 106);
+            this.textBox6.Location = new System.Drawing.Point(221, 106);
             this.textBox6.Multiline = true;
             this.textBox6.Name = "textBox6";
             this.textBox6.ReadOnly = true;
             this.textBox6.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox6.Size = new System.Drawing.Size(180, 385);
+            this.textBox6.Size = new System.Drawing.Size(200, 385);
             this.textBox6.TabIndex = 5;
             // 
             // textBox7
             // 
             this.textBox7.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.Location = new System.Drawing.Point(387, 106);
+            this.textBox7.Location = new System.Drawing.Point(427, 106);
             this.textBox7.Multiline = true;
             this.textBox7.Name = "textBox7";
             this.textBox7.ReadOnly = true;
             this.textBox7.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox7.Size = new System.Drawing.Size(180, 385);
+            this.textBox7.Size = new System.Drawing.Size(200, 385);
             this.textBox7.TabIndex = 6;
             // 
             // textBox8
             // 
             this.textBox8.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox8.Location = new System.Drawing.Point(573, 106);
+            this.textBox8.Location = new System.Drawing.Point(633, 106);
             this.textBox8.Multiline = true;
             this.textBox8.Name = "textBox8";
             this.textBox8.ReadOnly = true;
             this.textBox8.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox8.Size = new System.Drawing.Size(180, 385);
+            this.textBox8.Size = new System.Drawing.Size(200, 385);
             this.textBox8.TabIndex = 7;
             // 
             // button1
@@ -132,7 +132,7 @@
             this.button1.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(15, 51);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(180, 23);
+            this.button1.Size = new System.Drawing.Size(200, 23);
             this.button1.TabIndex = 8;
             this.button1.Text = "Ping";
             this.button1.UseVisualStyleBackColor = true;
@@ -141,9 +141,9 @@
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(201, 51);
+            this.button2.Location = new System.Drawing.Point(221, 51);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(180, 23);
+            this.button2.Size = new System.Drawing.Size(200, 23);
             this.button2.TabIndex = 9;
             this.button2.Text = "Ping";
             this.button2.UseVisualStyleBackColor = true;
@@ -152,9 +152,9 @@
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(387, 51);
+            this.button3.Location = new System.Drawing.Point(427, 51);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(180, 23);
+            this.button3.Size = new System.Drawing.Size(200, 23);
             this.button3.TabIndex = 10;
             this.button3.Text = "Ping";
             this.button3.UseVisualStyleBackColor = true;
@@ -163,9 +163,9 @@
             // button4
             // 
             this.button4.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(573, 51);
+            this.button4.Location = new System.Drawing.Point(633, 51);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(180, 23);
+            this.button4.Size = new System.Drawing.Size(200, 23);
             this.button4.TabIndex = 11;
             this.button4.Text = "Ping";
             this.button4.UseVisualStyleBackColor = true;
@@ -196,7 +196,7 @@
             this.button5.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.Location = new System.Drawing.Point(221, 22);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
+            this.button5.Size = new System.Drawing.Size(96, 23);
             this.button5.TabIndex = 14;
             this.button5.Text = "Save Report";
             this.button5.UseVisualStyleBackColor = true;
@@ -216,7 +216,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(524, 9);
+            this.label3.Location = new System.Drawing.Point(600, 9);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(233, 14);
             this.label3.TabIndex = 16;
@@ -257,18 +257,18 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(724, 22);
+            this.label6.Location = new System.Drawing.Point(800, 22);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(33, 14);
             this.label6.TabIndex = 20;
-            this.label6.Text = "v1.41";
+            this.label6.Text = "v1.42";
             this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(769, 498);
+            this.ClientSize = new System.Drawing.Size(849, 498);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label5);

@@ -260,9 +260,9 @@
             this.label6.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(800, 22);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(33, 14);
+            this.label6.Size = new System.Drawing.Size(36, 14);
             this.label6.TabIndex = 20;
-            this.label6.Text = "v1.45";
+            this.label6.Text = "v1.4.6";
             // 
             // notifyIcon1
             // 

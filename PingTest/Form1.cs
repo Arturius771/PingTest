@@ -31,7 +31,7 @@ namespace PingTest {
             InitializeTimer();
             timeout = int.Parse(textBox9.Text);
             startTime = DateTime.Now.ToShortTimeString();
-        }
+        }//start
         private void button1_Click(object sender, EventArgs e) {
             try {
                 Console.WriteLine("Button1 Pressed");
@@ -40,7 +40,8 @@ namespace PingTest {
                 ip1 = IPAddress.Parse(textBox1.Text);
                 myTimer.Interval = int.Parse(textBox10.Text);
             }
-            catch {
+            catch(Exception exception) {
+                textBox5.Text = exception.ToString();
                 Console.WriteLine("error button1");
             }
         }
@@ -79,7 +80,7 @@ namespace PingTest {
             catch {
                 Console.WriteLine("error button4");
             }
-        }
+        }//button*_Click methods are called when you click one of the ping buttons. They read the textbox for the IP and then change their corresponding bool for the timer. 
         private void button5_Click(object sender, EventArgs e) {
             reportTime = DateTime.Now.ToShortTimeString();
             SaveFileDialog saveFile = new SaveFileDialog {
@@ -88,9 +89,9 @@ namespace PingTest {
             };
             if (saveFile.ShowDialog() == DialogResult.OK) {
                 failureOnlyLog = string.Join("\r\n", failureCount.ToArray());
-                File.WriteAllText(saveFile.FileName, "Start: " + startTime + " " + "End: " + reportTime + "\r\nTimeout: " + textBox9.Text + " Frequency: " + textBox10.Text + "\r\n" + failureOnlyLog + "\r\n" + textBox1.Text + ":\r\n" + textBox5.Text + "\r\n" + textBox2.Text + ":\r\n" + textBox6.Text + "\r\n" + textBox3.Text + ":\r\n" + textBox7.Text + "\r\n" + textBox4.Text + ":\r\n" + textBox8.Text);
+                File.WriteAllText(saveFile.FileName, "Start: " + startTime + " " + "End: " + reportTime + "\r\nTimeout: " + textBox9.Text + " Frequency: " + textBox10.Text + "\r\n" + "\r\n" + failureOnlyLog + "\r\n" + "\r\n" + textBox1.Text + ":\r\n" + textBox5.Text + "\r\n" + textBox2.Text + ":\r\n" + textBox6.Text + "\r\n" + textBox3.Text + ":\r\n" + textBox7.Text + "\r\n" + textBox4.Text + ":\r\n" + textBox8.Text);
             }
-        }
+        }//this method saves a report as a text file.
         private void InitializeTimer() {
             // Call this procedure when the application starts.  
             // Set to 1 second.  
@@ -99,12 +100,12 @@ namespace PingTest {
 
             // Enable timer.  
             myTimer.Enabled = true;
-        }
-        private void Timer1_Tick(object Sender, EventArgs e) {
+        }//timer
+        private void Timer1_Tick(object Sender, EventArgs e) {            
             Console.WriteLine("Tick");
             count++;
             if (button1Pressed == true) {
-                new PingIP(ip1, textBox5, textBox1, timeout, count, failureCount);
+                new PingIP(ip1, textBox5, textBox1, timeout, count, failureCount, label7);
                 button1.Text = "Stop";
             }
             else {
@@ -112,7 +113,7 @@ namespace PingTest {
                 textBox5.BackColor = originalColor;
             }
             if(button2Pressed == true) {
-                new PingIP(ip2, textBox6, textBox2, timeout, count, failureCount);
+                new PingIP(ip2, textBox6, textBox2, timeout, count, failureCount, label8);
                 button2.Text = "Stop";
             }
             else {
@@ -120,7 +121,7 @@ namespace PingTest {
                 textBox6.BackColor = originalColor;
             }
             if (button3Pressed == true) {
-                new PingIP(ip3, textBox7, textBox3, timeout, count, failureCount);
+                new PingIP(ip3, textBox7, textBox3, timeout, count, failureCount, label9);
                 button3.Text = "Stop";
             }
             else {
@@ -128,14 +129,14 @@ namespace PingTest {
                 textBox7.BackColor = originalColor;
             }
             if (button4Pressed == true) {
-                new PingIP(ip4, textBox8, textBox4, timeout, count, failureCount);
+                new PingIP(ip4, textBox8, textBox4, timeout, count, failureCount, label10);
                 button4.Text = "Stop";
             }
             else {
                 button4.Text = "Ping";
                 textBox8.BackColor = originalColor;
             }
-        }
+        }//each tick of the timer checks the button click bool for a true value and then calls the PingIP class. 
         private void Form1_Resize(object sender, EventArgs e) {
             if (this.WindowState == FormWindowState.Minimized) {
                 Hide();
@@ -146,6 +147,6 @@ namespace PingTest {
             Show();
             this.WindowState = FormWindowState.Normal;
             notifyIcon1.Visible = false;
-        }
+        }//maximizes to full size again
     }
 }

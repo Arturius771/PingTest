@@ -47,6 +47,14 @@
             this.textBox10 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // textBox1
@@ -93,7 +101,7 @@
             this.textBox5.Name = "textBox5";
             this.textBox5.ReadOnly = true;
             this.textBox5.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox5.Size = new System.Drawing.Size(200, 385);
+            this.textBox5.Size = new System.Drawing.Size(200, 365);
             this.textBox5.TabIndex = 4;
             // 
             // textBox6
@@ -104,7 +112,7 @@
             this.textBox6.Name = "textBox6";
             this.textBox6.ReadOnly = true;
             this.textBox6.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox6.Size = new System.Drawing.Size(200, 385);
+            this.textBox6.Size = new System.Drawing.Size(200, 365);
             this.textBox6.TabIndex = 5;
             // 
             // textBox7
@@ -115,7 +123,7 @@
             this.textBox7.Name = "textBox7";
             this.textBox7.ReadOnly = true;
             this.textBox7.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox7.Size = new System.Drawing.Size(200, 385);
+            this.textBox7.Size = new System.Drawing.Size(200, 365);
             this.textBox7.TabIndex = 6;
             // 
             // textBox8
@@ -126,7 +134,7 @@
             this.textBox8.Name = "textBox8";
             this.textBox8.ReadOnly = true;
             this.textBox8.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox8.Size = new System.Drawing.Size(200, 385);
+            this.textBox8.Size = new System.Drawing.Size(200, 365);
             this.textBox8.TabIndex = 7;
             // 
             // button1
@@ -262,7 +270,7 @@
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(36, 14);
             this.label6.TabIndex = 20;
-            this.label6.Text = "v1.4.6";
+            this.label6.Text = "v1.4.7";
             // 
             // notifyIcon1
             // 
@@ -270,11 +278,99 @@
             this.notifyIcon1.Text = "Ping Test";
             this.notifyIcon1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon1_MouseDoubleClick);
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(73, 474);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(13, 14);
+            this.label7.TabIndex = 21;
+            this.label7.Text = "0";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(282, 475);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(13, 14);
+            this.label8.TabIndex = 22;
+            this.label8.Text = "0";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(488, 475);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(13, 14);
+            this.label9.TabIndex = 23;
+            this.label9.Text = "0";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(694, 475);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(13, 14);
+            this.label10.TabIndex = 24;
+            this.label10.Text = "0";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(12, 474);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(58, 14);
+            this.label11.TabIndex = 25;
+            this.label11.Text = "Failures: ";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(218, 475);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(58, 14);
+            this.label12.TabIndex = 26;
+            this.label12.Text = "Failures: ";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(424, 474);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(58, 14);
+            this.label13.TabIndex = 27;
+            this.label13.Text = "Failures: ";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(630, 475);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(58, 14);
+            this.label14.TabIndex = 28;
+            this.label14.Text = "Failures: ";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(849, 498);
+            this.Controls.Add(this.label14);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label5);
@@ -331,6 +427,14 @@
         private System.Windows.Forms.TextBox textBox10;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.NotifyIcon notifyIcon1;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label14;
     }
 }
 

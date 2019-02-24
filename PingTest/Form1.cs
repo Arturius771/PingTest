@@ -104,7 +104,7 @@ namespace PingTest {
             Console.WriteLine("Tick");
             count++;
             if (button1Pressed == true) {
-                new PingIP(ip1, textBox5, textBox1, timeout, count, failureCount);
+                new PingIP(ip1, textBox5, textBox1, timeout, count, failureCount, label8);
                 button1.Text = "Stop";
             }
             else {
@@ -112,7 +112,7 @@ namespace PingTest {
                 textBox5.BackColor = originalColor;
             }
             if(button2Pressed == true) {
-                new PingIP(ip2, textBox6, textBox2, timeout, count, failureCount);
+                new PingIP(ip2, textBox6, textBox2, timeout, count, failureCount, label9);
                 button2.Text = "Stop";
             }
             else {
@@ -120,7 +120,7 @@ namespace PingTest {
                 textBox6.BackColor = originalColor;
             }
             if (button3Pressed == true) {
-                new PingIP(ip3, textBox7, textBox3, timeout, count, failureCount);
+                new PingIP(ip3, textBox7, textBox3, timeout, count, failureCount, label11);
                 button3.Text = "Stop";
             }
             else {
@@ -128,7 +128,7 @@ namespace PingTest {
                 textBox7.BackColor = originalColor;
             }
             if (button4Pressed == true) {
-                new PingIP(ip4, textBox8, textBox4, timeout, count, failureCount);
+                new PingIP(ip4, textBox8, textBox4, timeout, count, failureCount, label13);
                 button4.Text = "Stop";
             }
             else {

@@ -262,7 +262,7 @@
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(33, 14);
             this.label6.TabIndex = 20;
-            this.label6.Text = "v1.44";
+            this.label6.Text = "v1.45";
             // 
             // notifyIcon1
             // 

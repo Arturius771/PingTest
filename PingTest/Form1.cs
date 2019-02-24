@@ -3,6 +3,8 @@ using System.Windows.Forms;
 using System.Net;
 using System.IO;
 using System.Drawing;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace PingTest {
     public partial class Form1 : Form {
@@ -17,8 +19,11 @@ namespace PingTest {
         IPAddress ip4;
         int timeout;
         int count = 0;
+        static List<string> failureCount = new List<string>();
         string startTime;
         string reportTime;
+        string failureOnlyLog;
+        Color originalColor = Form1.DefaultBackColor;
 
         public Form1() {
             Console.WriteLine("Hello");
@@ -82,7 +87,8 @@ namespace PingTest {
                 FilterIndex = 1
             };
             if (saveFile.ShowDialog() == DialogResult.OK) {
-                File.WriteAllText(saveFile.FileName, "Start: " + startTime + " " + "End: " + reportTime + "\r\nTimeout: " + textBox9.Text + " Frequency: " + textBox10.Text + "\r\n" + textBox1.Text + ":\r\n" + textBox5.Text + "\r\n" + textBox2.Text + ":\r\n" + textBox6.Text + "\r\n" + textBox3.Text + ":\r\n" + textBox7.Text + "\r\n" + textBox4.Text + ":\r\n" + textBox8.Text);
+                failureOnlyLog = string.Join("\r\n", failureCount.ToArray());
+                File.WriteAllText(saveFile.FileName, "Start: " + startTime + " " + "End: " + reportTime + "\r\nTimeout: " + textBox9.Text + " Frequency: " + textBox10.Text + "\r\n" + failureOnlyLog + "\r\n" + textBox1.Text + ":\r\n" + textBox5.Text + "\r\n" + textBox2.Text + ":\r\n" + textBox6.Text + "\r\n" + textBox3.Text + ":\r\n" + textBox7.Text + "\r\n" + textBox4.Text + ":\r\n" + textBox8.Text);
             }
         }
         private void InitializeTimer() {
@@ -97,34 +103,49 @@ namespace PingTest {
         private void Timer1_Tick(object Sender, EventArgs e) {
             Console.WriteLine("Tick");
             count++;
-            if(button1Pressed == true) {
-                new PingIP(ip1, textBox5, textBox1, timeout, count);
+            if (button1Pressed == true) {
+                new PingIP(ip1, textBox5, textBox1, timeout, count, failureCount);
                 button1.Text = "Stop";
             }
             else {
                 button1.Text = "Ping";
+                textBox5.BackColor = originalColor;
             }
             if(button2Pressed == true) {
-                new PingIP(ip2, textBox6, textBox2, timeout, count);
+                new PingIP(ip2, textBox6, textBox2, timeout, count, failureCount);
                 button2.Text = "Stop";
             }
             else {
                 button2.Text = "Ping";
+                textBox6.BackColor = originalColor;
             }
             if (button3Pressed == true) {
-                new PingIP(ip3, textBox7, textBox3, timeout, count);
+                new PingIP(ip3, textBox7, textBox3, timeout, count, failureCount);
                 button3.Text = "Stop";
             }
             else {
                 button3.Text = "Ping";
+                textBox7.BackColor = originalColor;
             }
             if (button4Pressed == true) {
-                new PingIP(ip4, textBox8, textBox4, timeout, count);
+                new PingIP(ip4, textBox8, textBox4, timeout, count, failureCount);
                 button4.Text = "Stop";
             }
             else {
                 button4.Text = "Ping";
+                textBox8.BackColor = originalColor;
             }
+        }
+        private void Form1_Resize(object sender, EventArgs e) {
+            if (this.WindowState == FormWindowState.Minimized) {
+                Hide();
+                notifyIcon1.Visible = true;
+            }
+        }//minimize and hide in notification area
+        private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e) {
+            Show();
+            this.WindowState = FormWindowState.Normal;
+            notifyIcon1.Visible = false;
         }
     }
 }

@@ -23,6 +23,7 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -45,6 +46,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.textBox10 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.SuspendLayout();
             // 
             // textBox1
@@ -249,7 +251,7 @@
             this.textBox10.Name = "textBox10";
             this.textBox10.Size = new System.Drawing.Size(71, 22);
             this.textBox10.TabIndex = 17;
-            this.textBox10.Text = "1000";
+            this.textBox10.Text = "2000";
             this.textBox10.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label6
@@ -260,7 +262,13 @@
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(33, 14);
             this.label6.TabIndex = 20;
-            this.label6.Text = "v1.43";
+            this.label6.Text = "v1.44";
+            // 
+            // notifyIcon1
+            // 
+            this.notifyIcon1.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon1.Icon")));
+            this.notifyIcon1.Text = "Ping Test";
+            this.notifyIcon1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon1_MouseDoubleClick);
             // 
             // Form1
             // 
@@ -293,6 +301,7 @@
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "Ping Test";
+            this.Resize += new System.EventHandler(this.Form1_Resize);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -321,6 +330,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textBox10;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.NotifyIcon notifyIcon1;
     }
 }
 

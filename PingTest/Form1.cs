@@ -20,10 +20,13 @@ namespace PingTest {
         int timeout;
         int count = 0;
         static List<string> failureCount = new List<string>();
+        LastFailTime lft = new LastFailTime();
+        string lastFailTime;
         string startTime;
         string reportTime;
         string failureOnlyLog;
         Color originalColor = Form1.DefaultBackColor;
+        
 
         public Form1() {
             Console.WriteLine("Hello");
@@ -31,6 +34,7 @@ namespace PingTest {
             InitializeTimer();
             timeout = int.Parse(textBox9.Text);
             startTime = DateTime.Now.ToShortTimeString();
+            lastFailTime = lft.lastFailTimeGetSet;
         }
         private void button1_Click(object sender, EventArgs e) {
             try {
@@ -86,6 +90,7 @@ namespace PingTest {
                 Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*",
                 FilterIndex = 1
             };
+            saveFile.FileName = DateTime.Now.ToString() + " ";
             if (saveFile.ShowDialog() == DialogResult.OK) {
                 failureOnlyLog = string.Join("\r\n", failureCount.ToArray());
                 File.WriteAllText(saveFile.FileName, "Start: " + startTime + " " + "End: " + reportTime + "\r\nTimeout: " + textBox9.Text + " Frequency: " + textBox10.Text + "\r\n" + failureOnlyLog + "\r\n" + textBox1.Text + ":\r\n" + textBox5.Text + "\r\n" + textBox2.Text + ":\r\n" + textBox6.Text + "\r\n" + textBox3.Text + ":\r\n" + textBox7.Text + "\r\n" + textBox4.Text + ":\r\n" + textBox8.Text);
@@ -104,7 +109,7 @@ namespace PingTest {
             Console.WriteLine("Tick");
             count++;
             if (button1Pressed == true) {
-                new PingIP(ip1, textBox5, textBox1, timeout, count, failureCount, label8);
+                new PingIP(ip1, textBox5, textBox1, timeout, count, failureCount, label8, lastFailTime);
                 button1.Text = "Stop";
             }
             else {
@@ -112,7 +117,7 @@ namespace PingTest {
                 textBox5.BackColor = originalColor;
             }
             if(button2Pressed == true) {
-                new PingIP(ip2, textBox6, textBox2, timeout, count, failureCount, label9);
+                new PingIP(ip2, textBox6, textBox2, timeout, count, failureCount, label9, lastFailTime);
                 button2.Text = "Stop";
             }
             else {
@@ -120,7 +125,7 @@ namespace PingTest {
                 textBox6.BackColor = originalColor;
             }
             if (button3Pressed == true) {
-                new PingIP(ip3, textBox7, textBox3, timeout, count, failureCount, label11);
+                new PingIP(ip3, textBox7, textBox3, timeout, count, failureCount, label11, lastFailTime);
                 button3.Text = "Stop";
             }
             else {
@@ -128,7 +133,7 @@ namespace PingTest {
                 textBox7.BackColor = originalColor;
             }
             if (button4Pressed == true) {
-                new PingIP(ip4, textBox8, textBox4, timeout, count, failureCount, label13);
+                new PingIP(ip4, textBox8, textBox4, timeout, count, failureCount, label13, lastFailTime);
                 button4.Text = "Stop";
             }
             else {
@@ -146,6 +151,9 @@ namespace PingTest {
             Show();
             this.WindowState = FormWindowState.Normal;
             notifyIcon1.Visible = false;
+        }
+        public void UpdateLFT() {
+            lft.lastFailTimeGetSet = DateTime.Now.ToString("HH:mm");
         }
     }
 }

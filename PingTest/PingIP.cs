@@ -9,7 +9,7 @@ namespace PingTest {
     internal class PingIP {        
         Ping ping = new Ping();
 
-        public PingIP(IPAddress ip, TextBox textBox, TextBox pingBox, int timeout, int count, List<String> failureCount, Label failureLabel, string latestLFT) {    
+        public PingIP(IPAddress ip, TextBox textBox, TextBox pingBox, int timeout, int count, List<String> failureCount, Label failureLabel) {    
             try {                
                 int failCount = int.Parse(failureLabel.Text);
                 PingReply reply = ping.Send(ip, timeout);
@@ -20,6 +20,7 @@ namespace PingTest {
                 }
                 else {
                     string now = DateTime.Now.ToString("HH:mm");
+                    string latestLFT = "temp";
                     Console.WriteLine("##" + now);
                     Console.WriteLine("##" + latestLFT);
                     failCount++;                    

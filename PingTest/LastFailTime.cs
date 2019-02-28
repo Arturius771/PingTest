@@ -1,7 +1,7 @@
 ﻿using System;
 
 namespace PingTest {
-    class static LastFailTime {
+    class LastFailTime {
         string lastFailTimeGetSetString = " start Last Fail Time";
         public string lastFailTimeGetSet {
             get {

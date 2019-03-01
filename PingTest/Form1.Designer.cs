@@ -55,7 +55,6 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.button6 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // textBox1
@@ -359,23 +358,11 @@
             this.label14.TabIndex = 27;
             this.label14.Text = "Failures: ";
             // 
-            // button6
-            // 
-            this.button6.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.Location = new System.Drawing.Point(323, 22);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(96, 23);
-            this.button6.TabIndex = 29;
-            this.button6.Text = "Tracert";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(849, 498);
-            this.Controls.Add(this.button6);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label11);
@@ -448,7 +435,6 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Button button6;
     }
 }
 

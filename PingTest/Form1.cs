@@ -102,9 +102,6 @@ namespace PingTest {
                 File.WriteAllText(saveFile.FileName, "Start: " + startTime + " " + "End: " + reportTime + "\r\nTimeout: " + textBox9.Text + " Frequency: " + textBox10.Text + "\r\n" + failureOnlyLog + "\r\n" + textBox1.Text + ":\r\n" + textBox5.Text + "\r\n" + textBox2.Text + ":\r\n" + textBox6.Text + "\r\n" + textBox3.Text + ":\r\n" + textBox7.Text + "\r\n" + textBox4.Text + ":\r\n" + textBox8.Text);
             }
         }
-        private void button6_Click(object sender, EventArgs e) {
-
-        }
         private void InitializeTimer() {
             // Call this procedure when the application starts.  
             // Set to 1 second.  

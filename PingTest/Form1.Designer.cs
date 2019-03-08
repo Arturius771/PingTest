@@ -266,11 +266,12 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(800, 22);
+            this.label6.Location = new System.Drawing.Point(603, 25);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(36, 14);
+            this.label6.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label6.Size = new System.Drawing.Size(132, 14);
             this.label6.TabIndex = 20;
-            this.label6.Text = "v1.5.0";
+            this.label6.Text = "v1.5.0 Performance Test";
             // 
             // notifyIcon1
             // 

@@ -15,7 +15,7 @@ namespace PingTest {
                 PingReply reply = ping.Send(ip, timeout);
                 
                 if (reply.Status == IPStatus.Success) {
-                    textBox.Text = count + " Ping to " + pingBox.Text + " " + reply.RoundtripTime.ToString() + "ms" + "\r\n" + textBox.Text;
+                    textBox.Text = count + " Ping to " + pingBox.Text + " " + reply.RoundtripTime.ToString() + "ms" + "\r\n";//changed in performance test
                     textBox.BackColor = Color.Turquoise;
                 }
                 else {
@@ -23,7 +23,7 @@ namespace PingTest {
 
                     failCount++;
                     failureLabel.Text = failCount.ToString();
-                    textBox.Text = count + ". Ping to " + pingBox.Text + " FAILED" + "\r\n" + textBox.Text;                    
+                    textBox.Text = count + ". Ping to " + pingBox.Text + " FAILED" + "\r\n";      //changed in performance test              
                     textBox.BackColor = Color.Salmon;
                     if(now != lft.lastFailTimeGetSet) {
                         failureCount.Add(pingBox.Text + " FAILED " + DateTime.Now.ToString("HH:mm"));

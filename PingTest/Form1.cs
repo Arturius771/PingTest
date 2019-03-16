@@ -12,25 +12,30 @@ namespace PingTest {
         bool button1Pressed = false;
         bool button2Pressed = false;
         bool button3Pressed = false;
-        bool button4Pressed = false;
+        bool button4Pressed = false;//detects whether the ping button has been prssed
         static List<string> failureCount1 = new List<string>();
         static List<string> failureCount2 = new List<string>();
         static List<string> failureCount3 = new List<string>();
-        static List<string> failureCount4 = new List<string>();
+        static List<string> failureCount4 = new List<string>();//lists for the save report feature
+        static List<string> allPings1 = new List<string>();
+        static List<string> allPings2 = new List<string>();
+        static List<string> allPings3 = new List<string>();
+        static List<string> allPings4 = new List<string>();//lists lists for all pings
         LastFailTime lft1 = new LastFailTime();
         LastFailTime lft2 = new LastFailTime();
         LastFailTime lft3 = new LastFailTime();
-        LastFailTime lft4 = new LastFailTime();
+        LastFailTime lft4 = new LastFailTime();//lastfailtime is a get set class that stores the time since the last failure
         IPAddress ip1;
         IPAddress ip2;
         IPAddress ip3;
-        IPAddress ip4;
-        int timeout;
-        int pingCount = 0;        
-        string startTime;
-        string reportTime;
-        string failureOnlyLog;
-        Color originalColor = Form1.DefaultBackColor;
+        IPAddress ip4;//the ip address in the text box
+        int timeout;//determines how long in milliseconds it should take before a ping attempt times out
+        int pingCount = 0;//the number of ticks/pings since the program has started.         
+        string startTime;//the time and date when the program was opened
+        string reportTime;//the time and date when the save report button was pressed
+        string failureOnlyLog;//combines all of the failureCount lists for the save report
+        string allPingsLog;
+        Color originalColor = Form1.DefaultBackColor;//restores the original color
        
 
 
@@ -99,7 +104,8 @@ namespace PingTest {
             saveFile.FileName = "Ping Test " + reportTime;
             if (saveFile.ShowDialog() == DialogResult.OK) {
                 failureOnlyLog = string.Join("\r\n", failureCount1.ToArray()) + "\r\n" + string.Join("\r\n", failureCount2.ToArray()) + "\r\n" + string.Join("\r\n", failureCount3.ToArray()) + "\r\n" + string.Join("\r\n", failureCount4.ToArray());
-                File.WriteAllText(saveFile.FileName, "Start: " + startTime + " " + "End: " + reportTime + "\r\nTimeout: " + textBox9.Text + " Frequency: " + textBox10.Text + "\r\n" + failureOnlyLog + "\r\n" + textBox1.Text + ":\r\n" + textBox5.Text + "\r\n" + textBox2.Text + ":\r\n" + textBox6.Text + "\r\n" + textBox3.Text + ":\r\n" + textBox7.Text + "\r\n" + textBox4.Text + ":\r\n" + textBox8.Text);
+                allPingsLog = textBox1.Text + ":\r\n" + string.Join("\r\n", allPings1.ToArray()) + "\r\n" + textBox2.Text + ":\r\n" + string.Join("\r\n", allPings2.ToArray()) + "\r\n" + textBox3.Text + ":\r\n" + string.Join("\r\n", allPings3.ToArray()) + "\r\n" + textBox4.Text + ":\r\n" + string.Join("\r\n", allPings4.ToArray());
+                File.WriteAllText(saveFile.FileName, "Start: " + startTime + " " + "End: " + reportTime + "\r\nTimeout: " + textBox9.Text + " Frequency: " + textBox10.Text + "\r\n" + failureOnlyLog + "\r\n" + allPingsLog);
             }
         }
         private void InitializeTimer() {
@@ -115,7 +121,7 @@ namespace PingTest {
             Console.WriteLine("Tick");
             pingCount++;
             if (button1Pressed == true) {
-                new PingIP(ip1, textBox5, textBox1, timeout, pingCount, failureCount1, label8, lft1);
+                new PingIP(ip1, textBox5, textBox1, timeout, pingCount, failureCount1, allPings1, label8, lft1);
                 button1.Text = "Stop";
             }
             else {
@@ -123,7 +129,7 @@ namespace PingTest {
                 textBox5.BackColor = originalColor;
             }
             if(button2Pressed == true) {
-                new PingIP(ip2, textBox6, textBox2, timeout, pingCount, failureCount2, label9, lft2);
+                new PingIP(ip2, textBox6, textBox2, timeout, pingCount, failureCount2, allPings2, label9, lft2);
                 button2.Text = "Stop";
             }
             else {
@@ -131,7 +137,7 @@ namespace PingTest {
                 textBox6.BackColor = originalColor;
             }
             if (button3Pressed == true) {
-                new PingIP(ip3, textBox7, textBox3, timeout, pingCount, failureCount3, label11, lft3);
+                new PingIP(ip3, textBox7, textBox3, timeout, pingCount, failureCount3, allPings3, label11, lft3);
                 button3.Text = "Stop";
             }
             else {
@@ -139,7 +145,7 @@ namespace PingTest {
                 textBox7.BackColor = originalColor;
             }
             if (button4Pressed == true) {
-                new PingIP(ip4, textBox8, textBox4, timeout, pingCount, failureCount4, label13, lft4);
+                new PingIP(ip4, textBox8, textBox4, timeout, pingCount, failureCount4, allPings4, label13, lft4);
                 button4.Text = "Stop";
             }
             else {

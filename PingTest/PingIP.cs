@@ -9,33 +9,33 @@ namespace PingTest {
     internal class PingIP {        
         Ping ping = new Ping();
 
-        public PingIP(IPAddress ip, TextBox textBox, TextBox pingBox, int timeout, int count, List<String> failureCount, Label failureLabel, LastFailTime lft) {    
+        public PingIP(IPAddress ip, TextBox outputTextbox, TextBox pingBox, int timeout, int count, List<String> failureCount, List<String> allPings, Label failureLabel, LastFailTime lft) {    
             try {                
                 int failCount = int.Parse(failureLabel.Text);
                 PingReply reply = ping.Send(ip, timeout);
                 
                 if (reply.Status == IPStatus.Success) {
-                    textBox.Text = count + " Ping to " + pingBox.Text + " " + reply.RoundtripTime.ToString() + "ms" + "\r\n" + textBox.Text;
-                    textBox.BackColor = Color.Turquoise;
+                    allPings.Add(count + " Ping to " + pingBox.Text + " " + reply.RoundtripTime.ToString() + "ms");
+                    outputTextbox.Text = count + ". Ping to " + pingBox.Text + " " + reply.RoundtripTime.ToString() + "ms";
+                    outputTextbox.BackColor = Color.Turquoise;
                 }
                 else {
                     string now = DateTime.Now.ToString("HH:mm");
-
                     failCount++;
                     failureLabel.Text = failCount.ToString();
-                    textBox.Text = count + ". Ping to " + pingBox.Text + " FAILED" + "\r\n" + textBox.Text;                    
-                    textBox.BackColor = Color.Salmon;
-                    if(now != lft.lastFailTimeGetSet) {
+                    outputTextbox.Text = count + ". Ping to " + pingBox.Text + " FAILED";                    
+                    allPings.Add(count + ". Ping to " + pingBox.Text + " FAILED");
+                    if (now != lft.lastFailTimeGetSet) {
                         failureCount.Add(pingBox.Text + " FAILED " + DateTime.Now.ToString("HH:mm"));
                         lft.lastFailTimeGetSet = DateTime.Now.ToString("HH:mm");
                     }
+                    outputTextbox.BackColor = Color.Salmon;
                     Console.WriteLine(lft.lastFailTimeGetSet + "check");
                 }
             }
             catch(Exception exception) {
-                textBox.Text = exception.ToString();
-            }
-            
+                outputTextbox.Text = exception.ToString();
+            }            
         }
     }
 }

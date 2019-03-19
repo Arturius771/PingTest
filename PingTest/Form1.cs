@@ -4,7 +4,6 @@ using System.Net;
 using System.IO;
 using System.Drawing;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace PingTest {
     public partial class Form1 : Form {
@@ -99,15 +98,14 @@ namespace PingTest {
                 Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*",
                 FilterIndex = 1
             };
-
             reportTime = DateTime.Now.ToString("dd-MM-yyyy HH-mm");
             saveFile.FileName = "Ping Test " + reportTime;
             if (saveFile.ShowDialog() == DialogResult.OK) {
-                failureOnlyLog = string.Join("\r\n", failureCount1.ToArray()) + "\r\n" + string.Join("\r\n", failureCount2.ToArray()) + "\r\n" + string.Join("\r\n", failureCount3.ToArray()) + "\r\n" + string.Join("\r\n", failureCount4.ToArray());
+                failureOnlyLog = "\r\n" + "Failures:" + string.Join("\r\n", failureCount1.ToArray()) + "\r\n" + string.Join("\r\n", failureCount2.ToArray()) + "\r\n" + string.Join("\r\n", failureCount3.ToArray()) + "\r\n" + string.Join("\r\n", failureCount4.ToArray());
                 allPingsLog = textBox1.Text + ":\r\n" + string.Join("\r\n", allPings1.ToArray()) + "\r\n" + textBox2.Text + ":\r\n" + string.Join("\r\n", allPings2.ToArray()) + "\r\n" + textBox3.Text + ":\r\n" + string.Join("\r\n", allPings3.ToArray()) + "\r\n" + textBox4.Text + ":\r\n" + string.Join("\r\n", allPings4.ToArray());
                 File.WriteAllText(saveFile.FileName, "Start: " + startTime + " " + "End: " + reportTime + "\r\nTimeout: " + textBox9.Text + " Frequency: " + textBox10.Text + "\r\n" + failureOnlyLog + "\r\n" + allPingsLog);
             }
-        }
+        }//this method creates a txt report of all of the pings and formats it in a useful way
         private void InitializeTimer() {
             // Call this procedure when the application starts.  
             // Set to 1 second.  
@@ -116,7 +114,7 @@ namespace PingTest {
 
             // Enable timer.  
             myTimer.Enabled = true;
-        }
+        }//tick tock
         private void Timer1_Tick(object Sender, EventArgs e) {
             Console.WriteLine("Tick");
             pingCount++;
@@ -152,7 +150,7 @@ namespace PingTest {
                 button4.Text = "Ping";
                 textBox8.BackColor = originalColor;
             }
-        }
+        }//Sends all of the lists, textboxes, labels relevent to each button and creates a new ping object that does the work
         private void Form1_Resize(object sender, EventArgs e) {
             if (this.WindowState == FormWindowState.Minimized) {
                 Hide();
@@ -163,6 +161,6 @@ namespace PingTest {
             Show();
             this.WindowState = FormWindowState.Normal;
             notifyIcon1.Visible = false;
-        }        
+        }
     }
 }

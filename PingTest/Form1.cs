@@ -102,7 +102,7 @@ namespace PingTest {
             saveFile.FileName = "Ping Test " + reportTime;
             if (saveFile.ShowDialog() == DialogResult.OK) {
                 failureOnlyLog = "\r\n" + "Failures:" + string.Join("\r\n", failureCount1.ToArray()) + "\r\n" + string.Join("\r\n", failureCount2.ToArray()) + "\r\n" + string.Join("\r\n", failureCount3.ToArray()) + "\r\n" + string.Join("\r\n", failureCount4.ToArray());
-                allPingsLog = textBox1.Text + ":\r\n" + string.Join("\r\n", allPings1.ToArray()) + "\r\n" + textBox2.Text + ":\r\n" + string.Join("\r\n", allPings2.ToArray()) + "\r\n" + textBox3.Text + ":\r\n" + string.Join("\r\n", allPings3.ToArray()) + "\r\n" + textBox4.Text + ":\r\n" + string.Join("\r\n", allPings4.ToArray());
+                allPingsLog ="\r\n" + textBox1.Text + ":\r\n" + string.Join("\r\n", allPings1.ToArray()) + "\r\n \r\n" + textBox2.Text + ":\r\n" + string.Join("\r\n", allPings2.ToArray()) + "\r\n \r\n" + textBox3.Text + ":\r\n" + string.Join("\r\n", allPings3.ToArray()) + "\r\n \r\n" + textBox4.Text + ":\r\n" + string.Join("\r\n", allPings4.ToArray());
                 File.WriteAllText(saveFile.FileName, "Start: " + startTime + " " + "End: " + reportTime + "\r\nTimeout: " + textBox9.Text + " Frequency: " + textBox10.Text + "\r\n" + failureOnlyLog + "\r\n" + allPingsLog);
             }
         }//this method creates a txt report of all of the pings and formats it in a useful way

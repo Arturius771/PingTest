@@ -93,7 +93,8 @@ namespace PingTest {
                 Console.WriteLine("error button4");
             }
         }
-        private void button5_Click(object sender, EventArgs e) {            
+        private void button5_Click(object sender, EventArgs e) {
+            Console.WriteLine("button5 pressed");
             SaveFileDialog saveFile = new SaveFileDialog {
                 Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*",
                 FilterIndex = 1
@@ -152,15 +153,28 @@ namespace PingTest {
             }
         }//Sends all of the lists, textboxes, labels relevent to each button and creates a new ping object that does the work
         private void Form1_Resize(object sender, EventArgs e) {
+            Console.WriteLine("resize");
             if (this.WindowState == FormWindowState.Minimized) {
                 Hide();
                 notifyIcon1.Visible = true;
             }
         }//minimize and hide in notification area
         private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e) {
+            Console.WriteLine("notification clicked");
+            maximize();
+        }
+        private void contextMenuStrip1_Click(object sender, EventArgs e) {
+            Console.WriteLine("context clicked");
+            maximize();
+        }
+        private void maximize() {
+            Console.WriteLine("maximized");
             Show();
             this.WindowState = FormWindowState.Normal;
             notifyIcon1.Visible = false;
+        }
+        private void confirmToolStripMenuItem_Click(object sender, EventArgs e) {
+            Application.Exit();
         }
     }
 }
